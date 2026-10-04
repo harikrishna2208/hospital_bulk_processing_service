@@ -1,0 +1,15 @@
+services:
+  hospital-bulk-processing:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      APP_ENV: development
+      PORT: 8000
+      HOSPITAL_DIRECTORY_BASE_URL: https://hospital-directory.onrender.com
+      REQUEST_TIMEOUT_SECONDS: 10
+      MAX_RETRIES: 3
+      RETRY_BASE_DELAY_SECONDS: 0.5
+      MAX_CONCURRENCY: 5
+      MAX_CSV_ROWS: 20
+      MAX_UPLOAD_SIZE_BYTES: 1048576
